@@ -20,18 +20,47 @@ body {
 	width:300px;
 	background-color: #FFC;
 	
-	padding:10px 20px 30px 40px; /* T R B L */
+	padding:10px 20px 30px 40px;    /* T R B L */
 	padding:10px 20px 30px; /* T R(L) B  */
 	padding:10px 20px; /* T(B) R(L) */
-	padding: 30px; /* all  */	
+	padding: 30px; /* all  */
+	
+	margin: 10px auto 30px auto;
+	margin: 200px auto 30px auto;
+
 }
 
 </style>
+
+<script>
+
+window.onload=function(){
+	el=document.getElementById("box")
+	el.onclick=function(){
+		/* setTimeout(function() {
+			console.log("!");
+		}, 1000); */
+		marginTop = parseInt(el.style.marginTop);
+		console.log(marginTop);
+		
+		intervalID = setInterval(function(){
+			if(marginTop < 50){
+				clearInterval(intervalID);
+				return;
+			}
+			marginTop -= 10;
+			el.style.marginTop = marginTop + "px";
+			console.log(marginTop);
+		}, 100);
+		
+	}
+}
+</script>
 </head>
 
 <body>
-<div class="box1">
-CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
+<div id="box" class="box1" style="margin-top:200px">
+	CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
 </div>
 
 
