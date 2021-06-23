@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+	input { 
+		background-color:yellow; 
+		border: 3px solid #03cf5d; 
+		padding:5px; 
+		outline:none
+		}
+	
+	input#user-id {background-color:yellow}
+	input#user-id.focused-red {background-color:red}
+	input#user-id.focused-blue {background-color:blue}
+	
+</style>
+<script>
+function changeBackground(input, className){
+	input.className=className;
+} 
+
+/* function changeBackground(input, focused){
+	if(focused){
+		input.style.backgroundColor="red";
+	} else{
+		input.style.backgroundColor="yellow";
+	}
+	
+} */
+
+
+</script>
+<body>
+
+	<form>
+		<input  
+			onfocus='changeBackground(this, "focused-red");'
+			onblur='changeBackground(this, "");'
+			type='text' 
+			id='user-id'
+			class="" 
+			name='userId' >
+		<br/><br/>
+		<input 
+			type='password' 
+			name='password'
+		>
+	</form>
+	
+</body>
+</html>
