@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>리스트를 이용한 메뉴 만들기</title>
+<style type="text/css">
+*		{ margin:0; padding:0 }
+ul, ol	{ list-style-type:  none }
+body	{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
+
+.tab-box { 
+	width:520px;
+	margin:50px auto;
+}
+
+.tab-box ul {
+	height:24px;
+	
+}
+
+.tab-box li {
+	cursor: pointer;
+	border: 1px solid black;
+	float: right;
+	width:100px;
+	line-height: 22px;
+	background-color: #ccc;
+	text-align: center;
+	margin-right: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	
+}
+.tab-box div {
+	width: 516px;
+	border: 1px solid black;
+	text-align: center;
+	margin-top: -1px;
+	line-height: 200px;
+}
+
+.tab-box .selected {
+	background-color: orange;
+}
+</style>
+<script>
+//DOM Level 1 Event 처리 : element의 event의 Listener를 등록하는 방식(observer 방식) 
+//1. HTML Tag 에 바로 적용하기
+var liSelected = null; 
+var onTabClicked = function() {
+	this.className = "selected";   // selected
+	if(liSelected != null) {       // unselected 
+		liSelected.className = ""; 
+	}
+	liSelected = this;
+};
+
+
+window.onload = function() {
+	var divTabBox = document.getElementsByClassName("tab-box")[0];
+	console.log(divTabBox.childNodes);
+
+	var ul = divTabBox.childNodes[1];
+	var liTabs = ul.getElementsByTagName("li");
+
+	for(var i = 0; i < liTabs.length; i++){
+		liTabs[i].addEventListener("click", onTabClicked);
+		liTabs[i].addEventListener("click", function(){
+			
+		});
+		
+	}
+}
+
+</script>
+</head>
+<body>
+<div class="tab-box">
+	<ul>
+        <li >메뉴 5</li>
+        <li >메뉴 4</li>
+        <li >메뉴 3</li>
+        <li >메뉴 2</li>
+        <li >메뉴 1</li>
+    </ul>
+    <div>
+    	탭뷰입니다.
+    </div>
+</div>    
+</body>
+</html>
