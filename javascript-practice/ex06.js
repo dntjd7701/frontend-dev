@@ -43,4 +43,8 @@ o3 = {
   },
 };
 
-console.log(o3);
+// XmlHttpRequest 호스트 객체(브라우저) 사용해서 통신을 한다. (AJAX)
+// JSON 이 message converter 써서 이런식으로 응답해줌.
+var response = '{name: "둘리", age: 10, email: "dooly@gmail.com"}';
+var userVo = eval("(" + response + ")");
+console.log(userVo.name + ":" + userVo.email);
