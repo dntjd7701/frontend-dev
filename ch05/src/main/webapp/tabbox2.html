@@ -44,40 +44,28 @@ body	{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
 }
 </style>
 <script>
-//DOM Level 2Event 처리 : element의 event attribute를 사용하는 방식 
-//2. HTML Tag 에 바로 적용하기
-var liSelected = null; 
-var onTabClicked = function() {
-	this.className = "selected";   // selected
-	if(liSelected != null) {       // unselected 
-		liSelected.className = ""; 
+//DOM Level 1 Event 처리 : element의 event attribute를 사용하는 방식 
+//1. HTML Tag 에 바로 적용하기
+
+liSelected = null;
+var onTabClicked = function(li) {
+	li.className="selected"; // selected
+	if(liSelected != null){
+		liSelected.className = ""; // unselected
 	}
-	liSelected = this;
+	liSelected = li;
 };
-
-
-window.onload = function() {
-	var divTabBox = document.getElementsByClassName("tab-box")[0];
-	console.log(divTabBox.childNodes);
-
-	var ul = divTabBox.childNodes[1];
-	var liTabs = ul.getElementsByTagName("li");
-
-	for(var i = 0; i < liTabs.length; i++){
-		liTabs[i].onclick = onTabClicked;
-	}
-}
 
 </script>
 </head>
 <body>
 <div class="tab-box">
 	<ul>
-        <li >메뉴 5</li>
-        <li >메뉴 4</li>
-        <li >메뉴 3</li>
-        <li >메뉴 2</li>
-        <li >메뉴 1</li>
+        <li onclick="onTabClicked(this);">메뉴 5</li>
+        <li onclick="onTabClicked(this);">메뉴 4</li>
+        <li onclick="onTabClicked(this);">메뉴 3</li>
+        <li onclick="onTabClicked(this);">메뉴 2</li>
+        <li onclick="onTabClicked(this);">메뉴 1</li>
     </ul>
     <div>
     	탭뷰입니다.
