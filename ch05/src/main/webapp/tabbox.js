@@ -5,7 +5,7 @@ var tabBox = {
   init: function () {
     window.addEventListener("load", this._onWindowLoad.bind(this));
   },
-  _onWindowLoad: function() {
+  _onWindowLoad: function () {
     var divTabBox = document.getElementsByClassName("tab-box")[0];
     var ul = divTabBox.childNodes[1];
     var liTabs = ul.getElementsByTagName("li");
@@ -15,7 +15,7 @@ var tabBox = {
       liTabs[i].addEventListener("click", this._onTabClicked);
     }
   },
-  _onTabClicked: function() {
+  _onTabClicked: function () {
     // unselected
     var lisSelected = document.getElementsByClassName("selected");
     lisSelected.length == 1 && (lisSelected[0].className = "");
