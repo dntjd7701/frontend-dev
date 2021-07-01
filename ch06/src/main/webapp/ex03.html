@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+</script>
+</head>
+<body>
+	<h1>BOM(Browser Object Model) - window, screen, location, navigator</h1>
+	<h2>3. location 객체(주소창)</h2>
+	
+	<h3>Refresh Page 하는 법</h3>
+	
+	<!-- 방법 1 -->
+	<!-- 객체를 바꾸는것, 객체 갱신 ? -->
+	<button onclick='location = location;'>refresh01</button>
+	
+	<!-- 방법 2 -->
+	<!-- 주소를 받아와서 주소 바꾸기 -->
+	<button onclick='location.href = location.href;'>refresh02</button>
+	
+	<!-- 방법 3 -->
+	<button onclick='location.assign("");'>refresh03</button>
+	
+	<!-- 방법 4 -->
+	<button onclick='location.replace(location);'>refresh04</button>
+	
+	
+	<!-- 방법 5 -->
+	<!-- **추천 -->
+	<button onclick='location.reload();'>refresh04</button>
+	
+	
+	<h3>Redirect</h3>
+	<button onclick='location.href="http://www.douzone.com";'>redirect to 우리회사</button>
+</body>
+</html>

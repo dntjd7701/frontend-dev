@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* Node 추가해서 body에 붙이기  */
+ 
+ 
+/* String의 형태로 보내기 */ 
+window.addEventListener("load", function(){
+	let htmls = "<h1>Hello DOM</h1>";
+	
+	/* 단, body의 내용이 싹 다 바뀐다는 단점이 존재. 그렇기에 이전 내용을 읽어서 함께 추가함 */
+	setTimeout(function(){
+		document.body.innerHTML += htmls;
+	}, 3000);
+	
+});
+</script>
+</head>
+<body>
+	<!--  -->
+	<h1>HTMLElement(DOM Tree Node) 추가하기 2 </h1>
+	
+	
+</body>
+</html>

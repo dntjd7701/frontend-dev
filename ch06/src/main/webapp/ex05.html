@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/**
+  용어 정리)
+  HTML 코드 안에서는 태그, DOM tree 안에서는 Node, 그 안의 내용(속성)에 접근했을 때는 HTMLElement라 부를 수 있다. 
+  
+  1. 태그(tag)
+  	- HTML문서 안에서 텍스트나, 콘텐츠를 정의할 때 사용하는 마크업 
+  2. 문서 객체(Document Object)
+  	- DOM(Document Object Model)
+  	- 구현 Tree의 구성 노드의 타입은 HTMLElement 이다.
+  	- JavaScript에서 접근하고 조작하게된다.(document라는 이름으로)
+  3. 노드(Node)
+  	- DOM Tree 각각의 요소 
+	
+ */
+ 
+ window.addEventListener("load", function(){
+	 	console.log("loaded");
+	 	let el = document.getElementById("header-2");
+	 	console.log(el);
+ });
+  
+</script>
+</head>
+<body>
+	<h1>Step 1</h1>
+	<!-- DOM을 만들다가 script를 만나면 script를 실행, 종료 후 다시 DOM 만듦. -->
+	<!-- alert를 만나면 예외적으로 Blocking함. -->
+	<script>alert("Step 2")</script>
+	<h1 id="header-2">Step 3</h1>
+	<script>alert("Step 4")</script>
+	
+</body>
+</html>
