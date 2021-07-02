@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// cross brower용 event handler 등록 함수
+const registerEventHandler = function(element, eventName, eventHandler){
+	// if ~else문 쓰지말고 아래와 같이 사용하자. (JavaScript에서)
+	
+	element &&  			// element가 null이 아니면  
+	element.attachEvent &&  // IE8 이하 버전 
+	element.attachEvent('on' + eventName, eventHandler);
+	
+	element && 					// element가 null이 아니면 
+	element.addEventListener && // 표준 브라우저면 
+	element.addEventListener(eventName, eventHandler);
+};
+
+
+
+
+window.addEventListener("load",function(){
+	const h1 = document.getElementById("header");
+	const clickEventHandler1 = function(){
+		console.log("click1");
+	};
+	const clickEventHandler2 = function(){
+		console.log("click2");
+	};
+	
+	//  등록
+	h1.addEventListener("click", clickEventHandler1);
+	
+	// <= IE8 대응 
+	registerEventHandler(h1, "click", clickEventHandler2);
+	
+	// Listener 제거 
+	// h1.removeEventListener("click", clickEventHandler2);
+});
+	
+
+</script>
+</head>
+<body>
+<!-- 사실상 필요없음.  -->
+<!-- Croos Browser를 어떻게 처리하는지에 대한 이해용   -->
+	<h1>DOM Event 처리(&gt;IE8 대응, Cross Browser)</h1>
+	<h1 id="header">Click!!!</h1>
+	
+	
+</body>
+</html>

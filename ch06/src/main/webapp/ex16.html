@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+Event Propagation(Event Bubbling)
+특정 엘리먼트에서 이벤트(마우스 클릭과 같은)가 발생했을 때,
+그 이벤트가 상위(또는 하위) 엘리먼트로 전달(전파)되어 가는 것.  
+
+<=IE8			: outer-div > inner-div > header > text
+standard others : text > header > inner-div > outer-div 
+
+
+propation -> 표준 용어
+bubbling -> MS쪽 용어 
+
+ */
+ 
+window.addEventListener("load",function(){
+	document.getElementById("outer-div").addEventListener("click",function(){
+		console.log("outer-div clicked !!!");
+	});
+	
+	
+	document.getElementById("inner-div").addEventListener("click",function(e){
+		// <= IE8, IE8에서는 event를 내려받지 못함. (function의) null 임 
+		const event = e || window.event; // <= IE8, 지금은 상관 없는 코드.
+		
+		
+		
+		// prevent event 's propagation(bubbling)
+		event.cancelBubble = true; // <= IE8
+		event.stopPropagation && event.stopPropagation(); // Standard
+		
+		
+		
+		console.log("inner-div clicked !!!");
+	});
+	
+	document.getElementById("header").addEventListener("click",function(){
+		console.log("header clicked !!!");
+	});
+	
+	document.getElementById("text").addEventListener("click",function(e){
+		e.stopPropagation();
+		console.log("text clicked !!!");
+	});
+	
+});
+
+</script>
+</head>
+<body>
+	<h1>DOM Event 처리 (Event Bubbling)</h1>
+	<div id="outer-div">
+		<div id="inner-div">
+			<h1 id="header">
+				<span id="text">Text</span>
+			</h1>
+		</div>
+	</div>
+	
+</body>
+</html>

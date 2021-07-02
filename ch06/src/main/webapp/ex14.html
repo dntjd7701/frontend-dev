@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// form submit 막기 1(DOM Event Model0)
+window.addEventListener("load",function(){
+	const form = document.getElementById("form-login");
+	form.onsubmit=function(){
+		const inputEmail = document.getElementById("input-email");
+		if(inputEmail.value == ''){
+			alert('이메일이 비어 있습니다.');
+			inputEmail.focus();
+			return false;
+		}
+		const inputPassword = document.getElementById("input-pwd");
+		if(inputPassword.value == ''){
+			alert('비밀번호가 비어 있습니다.');
+			inputPassword.focus();
+			return false;
+		}
+			
+		return true;
+	}
+})
+</script>
+</head>
+<body>
+	<form action="/user/auth" method="post" id="form-login">
+		<label>email</label>
+		<input type="text" name="email" id="input-email"/>
+		<br/><br/>
+		<label>password</label>
+		<input type="text" name="password" id="input-pwd"/>
+		<br/><br/>
+		<input type="submit" value="login"/>
+	</form>
+</body>
+</html>

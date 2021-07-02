@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// form submit 막기 1(DOM Event Model2)
+window.addEventListener("load",function(){
+	const form = document.getElementById("form-login");
+	form.addEventListener("submit", function(event){
+		 event.preventDefault();
+		 
+			const inputEmail = document.getElementById("input-email");
+			if(inputEmail.value == ''){
+				alert('이메일이 비어 있습니다.');
+				inputEmail.focus();
+				return;
+			}
+			const inputPassword = document.getElementById("input-pwd");
+			if(inputPassword.value == ''){
+				alert('비밀번호가 비어 있습니다.');
+				inputPassword.focus();
+				return;
+			}
+			
+			
+			// 직접 서비스를 해야함.
+			// this는 element를 말함 (event 에서)
+			this.submit();
+	})
+})
+</script>
+</head>
+<body>
+	<form id="form-login" action="/user/auth" method="post" >
+		<label>email</label>
+		<input type="text" name="email" id="input-email"/>
+		<br/><br/>
+		<label>password</label>
+		<input type="text" name="password" id="input-pwd"/>
+		<br/><br/>
+		<input id="form-submit" type="submit" value="login"/>
+	</form>
+</body>
+</html>

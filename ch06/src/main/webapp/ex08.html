@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* Node 추가해서 body에 붙이기  */
+ 
+ 
+/* String의 형태로 보내기 */ 
+window.addEventListener("load", function(){
+	const imgElement = document.createElement("img");
+	
+	imgElement.src = "https://search.naver.com/search.naver?where=image&sm=tab_niv&query=%EB%91%98%EB%A6%AC&nso=so%3Ar%2Ca%3Aall%2Cp%3Aall#imgId=image_sas%3Ablog108948022%7C1%7C221137690267_1044761685&vType=rollout";
+	imgElement.setAttribute("style", "background-color:red;");
+	imgElement.style.width="200px";
+	imgElement.alt = "둘리";
+	imgElement.title = "둘리";
+	/* imgElement["data-no"] = 10; 비표준 속성  */
+	
+	/* 단, body의 내용이 싹 다 바뀐다는 단점이 존재. 그렇기에 이전 내용을 읽어서 함께 추가함 */
+	setTimeout(function(){
+		document.body.appendChild(imgElement);
+	}, 3000);
+	
+});
+</script>
+</head>
+<body>
+	<h1>HTMLElement(DOM Tree Node) 속성 추가하기 </h1>
+</body>
+</html>
