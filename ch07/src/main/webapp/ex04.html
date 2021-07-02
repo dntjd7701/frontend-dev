@@ -1,0 +1,61 @@
+;<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 개발 소스 버전(서비스 서버 호스팅)-압축되지 않은 것 -->
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script>
+$(function(){
+	const $obj = $(".par");
+	console.log($obj.length);  // 2
+	console.log(typeof $obj + ":" + ($obj instanceof Array)); // 배열이 아니라 유사배열
+	
+	console.log($obj[0]); //jQuery object가 아니다. HTMLElement이다.(node)
+	console.log($obj[1]); //jQuery object가 아니다. HTMLElement이다.(node)
+	
+	console.log($obj.get(0)); //jQuery object가 아니다. HTMLElement이다.(node)
+	
+	//api
+	$obj.css('color', 'red');
+	
+	//event
+	$obj.click(function(){
+		// 이벤트 핸들러에서 this는 jquery object가 아닌 HTMLElement다. 
+		console.log("clicked!! : " + this);
+		// 주의)여기서 this는 jQuery object가 아니기 때문에 이렇게 할 수가 없다.  
+		// this.css("text-decoration", 'underline');
+	
+		// jQuery object의 거의 모든 method(api)는 chain을 걸 수 있다.
+		// 즉, 거의 모든 method(api)는 호출한 jQuery object를 다시 반환한다.
+		// == method chain
+		// 예외 --> traverse
+		$(this)
+			.css("text-decoration", "underline")
+			.text("클릭!");
+		
+	});
+	
+	
+	
+	
+});
+</script>
+</head>
+<body>
+	<h1 id="header">jQuery Object</h1>
+	<p class="par">
+		문장1 
+	</p>
+	<p>
+		문장2 
+	</p>
+	<p class="par">
+		문장3 
+	</p>
+	<p>
+		문장4 
+	</p>
+</body>
+</html>

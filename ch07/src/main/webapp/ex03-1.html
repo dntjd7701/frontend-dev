@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 개발 소스 버전(서비스 서버 호스팅)-압축되지 않은 것 -->
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script>
+$(function(){
+	const $obj = $(".par");
+	$obj.click(function(){
+		console.log("clicked !! : " + this);
+		/* $(this).css("text-decoration", "underline"); */
+	});
+	setTimeout(function(){
+		$obj.css("color", "orange");
+	}, 2000);
+});
+</script>
+</head>
+<body>
+	<h1 id="header">Simple jQuery 만들기 1</h1>
+	<p class="par">
+		문장1 
+	</p>
+	<p>
+		문장2 
+	</p>
+	<p class="par">
+		문장3 
+	</p>
+	<p>
+		문장4 
+	</p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 개발 소스 버전(서비스 서버 호스팅)-압축되지 않은 것 -->
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script>
+	$(function() {
+
+		setTimeout(function() {
+			// class 선택자
+			$(".text1").css("color", "orange");
+		}, 100);
+
+		setTimeout(function() {
+			// class 선택자
+			$(".text2").css("color", "deeppink");
+		}, 200);
+
+		setTimeout(function() {
+			// class 선택자
+			$(".text3").css("color", "skyblue");
+		}, 300);
+
+		setTimeout(function() {
+			// class 선택자
+			$(".text4").css("color", "purple");
+		}, 400);
+		
+		setTimeout(function(){
+			$(".text1").css("color", "");
+			$(".text2").css("color", "");
+			$(".text3").css("color", "");
+			$(".text4").css("color", "");
+		}, 500)
+		
+			setTimeout(function(){
+			$(".text1").css("color", "orange");
+			$(".text2").css("color", "deeppink");
+			$(".text3").css("color", "skyblue");
+			$(".text4").css("color", "purple");
+		}, 600)
+		
+
+	});
+</script>
+</head>
+<body>
+	<h1>선택자 - id</h1>
+	<ul>
+		<li class="text1">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="text2">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="text3">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="text4">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>
