@@ -1,25 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
- Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="Content-Style-Type" content="text/css" />
-		<meta http-equiv="Content-Script-Type" content="text/javascript" />
-		<title>sample23</title>
-		<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
-		<script type="text/javascript">
-		$(function(){
-			$("li:first").css("color","red");
-		});
-		</script>
-	</head>
-	<body>
-		<ul>
-			<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
-			<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
-			<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
-			<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 
-		</ul>
-	</body>
+<!-- 개발 소스 버전(서비스 서버 호스팅)-압축되지 않은 것 -->
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script>
+	$(function() {
+		setTimeout(function(){
+				$("li:first").css("color", "red");
+				$("li:last").css("color", "red");
+		}, 1000)
+	});
+	
+	
+// $("input[type="text"]")
+</script>
+</head>
+<body>
+	<h1>jQuery filter(first, last)</h1>
+	<ul>
+		<li id="text1">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="text2">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="text3">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id="text4">텍스트 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
 </html>
