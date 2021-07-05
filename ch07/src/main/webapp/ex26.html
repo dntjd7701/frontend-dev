@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
-<script type="text/javascript">
-	$( function() {
-		/* 코드를 완성하세요 */
-	} );  
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 개발 소스 버전(서비스 서버 호스팅)-압축되지 않은 것 -->
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script>
+	$(function() {
+		setTimeout(function(){
+			
+			// Before처럼 없는 놈을 삽입하는게 아닌, 있는 놈을 지정된 전 위치로 위치시키는것. 
+			$("#h2").insertBefore("#p1"); 
+			
+		}, 1000)
+	});
 </script>
 </head>
 <body>
-<p id="p1">EFGHIJKLMNOPQRSTUVWXYZ</p>
-<p id="p2"><strong>ABCD</strong>efghijklmnopqrstuvwxyz</p>
+
+	<h1>DOM 조작 API - insertBefore()</h1>
+	
+	<p id="p1">내용입니다.</p>
+	<h2 id="h2">제목입니다.</h2>
+	
+	
 </body>
 </html>

@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
-<script type="text/javascript">
-	$( function() {
-	
-		/* 코드를 완성하세요 */
-	} );  
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 개발 소스 버전(서비스 서버 호스팅)-압축되지 않은 것 -->
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script>
+	$(function() {
+		setTimeout(function(){
+			// 기존 text의 전에 내용 전체를 새로 삽입. 
+			// 안이 아닌, 바깥으로. 
+			$("h2").after("<p>내용입니다.</p>"); 
+			
+		}, 1000)
+	});
 </script>
 </head>
 <body>
-<p id="p1">가나다라마바사아자차</p>
+	<h1>DOM 조작 API - after()</h1>
+	
+	<h2>제목입니다.</h2>
+	
+	
+	
 </body>
 </html>

@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
-<script type="text/javascript">
-	$( function() {
-		/* 코드를 완성하세요 */
-	} );  
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 개발 소스 버전(서비스 서버 호스팅)-압축되지 않은 것 -->
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script>
+	$(function() {
+		setTimeout(function(){
+
+			// 출력 -> ABCDEFGHIJKLMNOPQRSTUWVYZ
+			$("#p2 strong").appendTo("#p1"); 
+			
+		}, 1000)
+	});
 </script>
 </head>
 <body>
-<h1 id="h1">타이틀입니다.</h1>
-
+	<h1>DOM 조작 API - appendTo()</h1>
+	
+	<p id="p1">ABCDEFGHIJKLMNOP</p>
+	<p id="p2">abcdefdafdf<strong>QRSTUWVYZ</strong></p>
+	
 </body>
 </html>
