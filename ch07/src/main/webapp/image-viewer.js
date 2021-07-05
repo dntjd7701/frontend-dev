@@ -22,8 +22,9 @@ var imageViewer = {
   		// 슬라이드쇼 진행 상태 
   		// 1. 타이머 중지
   		// 2. 슬라이드쇼 시작
-		var that = this;
-		clearInterval(that._intervalId);  		 
+
+		clearInterval(this._intervalId);
+		this._intervalId = null;  		 
   		$("#btn-slideshow").text("슬라이드쇼 시작");
   		
   	} else {
@@ -39,6 +40,8 @@ var imageViewer = {
   		 
   	}
   },
+  
+  _intervalId:null,
   
   _changeImage: function () {
     var index = Math.floor(Math.random() * this._images.length);
