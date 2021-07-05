@@ -2,6 +2,7 @@
 
 var imageViewer = {
   init: function () {
+  	
     var that = this;
     $(function () {
       $("#btn-change").click(that._changeImage.bind(that));
