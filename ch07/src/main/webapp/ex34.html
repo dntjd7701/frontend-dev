@@ -8,16 +8,33 @@
 <script type="text/javascript" src="image-viewer.js"></script>
 <script type="text/javascript">
 	imageViewer.init();
+	
+/**
+ *  과제 : slideshow 만들기
+ 
+ 	1. btn-sildeshow click event
+ 	2. event handler
+ 		- 2초마다 그림 변경
+ 		
+ 			_intervalId = setInterval(function(){...changImage...}, 2000);
+			clearInterval(_intervalId);
+			
+			_intervalId = null;
+			
+ 		- btn text 변경, 슬라이드쇼 시작 -> 슬라이드쇼 중지
+ 		- 슬라이드쇼 중지 -> 슬라이드쇼 시작
+ 	
+ */
 </script>
 </head>
 <body>
 	<div class="image-viewer">
 		<div class="buttons">
 			<button id="btn-change">이미지변경</button>
-			<button id="btn-sildeshow">슬라이드쇼 시작</button>
+			<button id="btn-slideshow">슬라이드쇼 시작</button>
 		</div>
 		<div>
-			<img src="images/Desert.jpg" alt="사막" title="사막" />
+			<img />
 		</div>
 	</div>
 </body>
