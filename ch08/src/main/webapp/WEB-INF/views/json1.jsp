@@ -12,18 +12,26 @@
 <script>
 	$(function(){
 		$("button").click(function(){
-			// ajax 통신으로 로딩하는 방법 
-			// 응답하는 text 내용이 로딩됌 
-			// JS와 JSP의 혼용. 
-			// JSP 엔진에서 실행. 
-			$("p").load("${pageContext.request.contextPath }/api/text");			
+			$.ajax({
+				url: "${pageContext.request.contextPath }/api/json",
+				dataType: "json", // xml or json
+				type: "get",
+				success : function(response){ // callback
+					//rendering
+					let html = "";
+					html += "<h4>" + response.data.no + "</h4>";
+					html += "<h5>" + response.data.name + "</h5>";
+					html += "<p>" + response.data.message + "</p>";
+					$("#data").append(html);
+				}   
+			})
 		})
 	});
 </script>
 </head>
 <body>
-	<h1>AJAX Test- text format data</h1>
-	<button>change</button>
-	<p>Before change</p>
+	<h1>AJAX Test- json1 format data</h1>
+	<button>Bring data</button>
+	<div id="data"></div>
 </body>
 </html>

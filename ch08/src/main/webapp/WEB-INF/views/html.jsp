@@ -16,13 +16,13 @@
 			// 응답하는 text 내용이 로딩됌 
 			// JS와 JSP의 혼용. 
 			// JSP 엔진에서 실행. 
-			$("p").load("${pageContext.request.contextPath }/api/text");			
+			$("p").load("${pageContext.request.contextPath }/api/html h1");	// Selector 사용 가능 	
 		})
 	});
 </script>
 </head>
 <body>
-	<h1>AJAX Test- text format data</h1>
+	<h1>AJAX Test- html format message(data)</h1>
 	<button>change</button>
 	<p>Before change</p>
 </body>
