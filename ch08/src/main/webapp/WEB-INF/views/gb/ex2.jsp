@@ -11,9 +11,15 @@
 <!-- alert를 이쁘게 꾸미기 위한 dialog 받기 -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/ejs/ejs.js"></script>
 <!-- alert를 이쁘게 꾸미기 위한 dialog 받기 -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
+// EJS-1) EJS Template 엔진의 준비 (Rendering)
+var listItemEJS = new EJS({
+	url : "${pageContext.request.contextPath }/ejs/listitem-template.ejs",
+})
+
 var messageBox = function(error, message){
 	$("#dialog-message").dialog({
 		modal:true, // 뒷 부분 투명하게.
@@ -52,19 +58,13 @@ $(function(){
 				contentType: "application/json",
 				data: JSON.stringify(vo),
 				success : function(response){ // callback
-					var vo = response.data;
-					html =
-						"<li data-no='" + vo.no + "'>" + 
-							"<strong>" + vo.name + "</strong>" +
-							"<p>" + vo.message + "</p>" +
-							"<strong></strong>" + 
-							"<a href='' data-no='" + vo.no + "'>삭제</a>" + 
-						"</li>";
-					$("#list-guestbook").prepend(html);	
+					// EJS-2) EJS 엔진의 가동 (데이터 삽입)
+					html = listItemEJS.render(response.data);
+					$("#list-guestbook").prepend(html);
 				}   
-			})
+			});
 		
-	})
+	});
 });
 </script>
 </head>

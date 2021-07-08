@@ -74,7 +74,7 @@ $(function(){
 								return;
 							}
 							$("#list-guestbook li[data-no=" + response.data + "]").remove();
-							deleteDialog.dialog("close:");
+							deleteDialog.dialog("close");
 						}   
 					})
 			},
@@ -83,14 +83,14 @@ $(function(){
 				$(this).dialog("close");				
 			}
 		},
-		close: function({
+		close: function(){
 			// 1. password 비우기
 			// 2. no 비우기
 			// 3. error message 숨기기 
 			
 			
 			console.log("다이얼로그 폼데이터 정리 방법 ");
-		})
+		}
 	});
 	
 	// 최초 데이터 가져오기
