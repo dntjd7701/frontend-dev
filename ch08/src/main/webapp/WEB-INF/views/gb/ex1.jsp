@@ -26,7 +26,7 @@ var fetch = function(){
 				render(e, true);
 			}); */
 			html = listItemEJS.render(response); // 배열이기 때문에 response.data가 아닌 response를 보내줘야한다.
-										  // 참조를 위해서.
+										 		 // 참조를 위해서.
 			$("#list-guestbook").append(html); //
 		}
 	});	

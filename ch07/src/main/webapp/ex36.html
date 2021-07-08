@@ -4,7 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
 <script type="text/javascript">
-// 미완
 	$( function() {
 		// jQueyr API를 사용하기 위해 window를 둘러쌈 
 		$(window).scroll(function(){
@@ -19,7 +18,7 @@
 			var documentHeight = $(document).height();
 			
 			// 공식 
-			if(scrollTop+windowHeight+200 >= documentHeight){
+			if(scrollTop+windowHeight+10 >= documentHeight){
 				console.log("fetch list!!");
 			}
 		});
