@@ -59,7 +59,7 @@ $(function(){
 				data: JSON.stringify(vo),
 				success : function(response){ // callback
 					// EJS-2) EJS 엔진의 가동 (데이터 삽입)
-					html = listItemEJS.render(response.data);
+					html = listItemEJS.render(response.data); // 객체 
 					$("#list-guestbook").prepend(html);
 				}   
 			});

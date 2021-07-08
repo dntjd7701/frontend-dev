@@ -1,0 +1,15 @@
+	<%
+		for(var i=0; i < data.length; i++) { 
+			var vo = data[i];
+	%>
+		<li data-no='<%=vo.no%>'>  
+			<strong><%=vo.name%></strong>
+			<p><%=vo.message.replace(/\n/gi, "<br/>")%></p>
+			<strong></strong>
+			<a href='' data-no='<%=vo.no%>'>삭제</a>
+		</li>
+	<%
+		}
+	%>
+	
+	// response.data 가 아닌, response로 전체를 받아서 각 data 객체를 뽑아낸다.
