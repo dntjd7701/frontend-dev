@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+// 미완
+	$( function() {
+		// jQueyr API를 사용하기 위해 window를 둘러쌈 
+		$(window).scroll(function(){
+			
+			// 여기서의 this는 윈도우이다.
+			var $window = $(this);
+			
+			// window height는 고정적이지 않기 때문에(사용자의 창 크기 변형)
+			// 이벤트에 따라 구해져야한다.
+			var windowHeight = $window.height();
+			var scrollTop = $window.scrollTop();
+			var documentHeight = $(document).height();
+			
+			// 공식 
+			if(scrollTop+windowHeight+200 >= documentHeight){
+				console.log("fetch list!!");
+			}
+		});
+	});  
+</script>
+</head>
+<body>
+	<h1>DOM Event - scroll</h1>
+	<ul>
+		<li>
+			<strong>dooly1</strong>
+			<p>ho!</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>dooly2</strong>
+			<p>ho!</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>dooly3</strong>
+			<p>ho!</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>dooly4</strong>
+			<p>ho!</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>dooly5</strong>
+			<p>ho!</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>dooly6</strong>
+			<p>ho!</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>dooly7</strong>
+			<p>ho!</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+		<li>
+			<strong>dooly8</strong>
+			<p>ho!</p>
+			<strong></strong>
+			<a href=''>삭제</a>
+		</li>
+	</ul>
+	
+</body>
+</html>
