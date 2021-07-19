@@ -7,7 +7,7 @@ const ex02 = function(param){
             } else {
                 reject(new Error('fail'));
             }
-        }, 1000)
+        }, 2000)
     })
 };
 
