@@ -1,11 +1,8 @@
 {
-  "name": "testing",
+  "name": "async",
   "version": "1.0.0",
-  "description": "## JavaScript 단위 테스트 도구",
+  "description": "",
   "main": "ex01.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "npx mocha"
   },
